@@ -44,13 +44,13 @@ export default function Todo(props) {
             <div className="btn-group">
                 <button 
                   type="button" 
-                  className="btn todo-cancel"
+                  className="btn btn__ctrl todo-cancel"
                   onClick={() => setEditing(false)}
                 >
                     Cancel
                     <span className="visually-hidden">renaming {props.span}</span>
                 </button>
-                <button type="submit" className="btn btn__primary todo-edit">
+                <button type="submit" className="btn btn__primary todo-save">
                     Save
                     <span className="visually-hidden">new name for {props.name}</span>
                 </button>
@@ -73,18 +73,20 @@ export default function Todo(props) {
           <div className="btn-group">
             <button 
               type="button" 
-              className="btn"
+              className="btn btn__ctrl todo-edit"
               onClick={() => setEditing(true)}
               ref={editButtonRef}
             >
-              Edit <span className="visually-hidden">{props.name}</span>
+              Edit
+              <span className="visually-hidden">{props.name}</span>
             </button>
             <button 
               type="button" 
               className="btn btn__danger" 
               onClick={() => props.deleteTask(props.id)}
             >
-              Delete <span className="visually-hidden">{props.name}</span>
+              Delete
+              <span className="visually-hidden">{props.name}</span>
             </button>
           </div>
         </div>

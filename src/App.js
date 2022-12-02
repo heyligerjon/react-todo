@@ -86,6 +86,7 @@ function App(props) {
       listHeadingRef.current.focus();
     }
   }, [tasks.length, prevTaskLength]);
+  
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>

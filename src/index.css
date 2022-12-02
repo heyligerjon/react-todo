@@ -1,3 +1,14 @@
+/* CUSTOM PROPERTIES */
+:root{
+  --theme-color: #2c7c32;
+  --theme-color-secondary: #a57f53;
+  --button-color: #2c7c32;
+  --button-color-secondary: #8d8d8d;
+  --button-border: #2c6730;
+  --button-border-secondary: #4d4d4d;
+  --theme-text: #4d4d4d;
+  --theme-text-secondary: #ffffff;
+}
 /* RESETS */
 *,
 *::before,
@@ -51,15 +62,15 @@ input {
   overflow: visible;
 }
 input[type="text"] {
-  border-radius: 0;
+  border-radius: 1rem;
 }
 body {
   width: 100%;
   max-width: 68rem;
   margin: 0 auto;
   font: 1.6rem/1.25 Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #4d4d4d;
+  background-color: #ffffff;
+  color: var(--theme-text);
 }
 @media screen and (min-width: 620px) {
   body {
@@ -74,34 +85,95 @@ body {
   margin-top: 0.4rem;
 }
 .btn {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
   padding: 0.8rem 1rem 0.7rem;
   border: 0.2rem solid #4d4d4d;
+  border-radius: 1rem;
   cursor: pointer;
   text-transform: capitalize;
+  color: var(--theme-text);
+  border-color: var(--button-border-secondary);
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
 }
 .btn.toggle-btn {
   border-width: 1px;
-  border-color: #d3d3d3;
+  border-color: var(--button-border-secondary);
+  -webkit-transition-property: var(--button-color-secondary);
+  transition-property: var(--button-color-secondary);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.btn.toggle-btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--button-color-secondary);
+  border-radius: 2000px;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.btn.toggle-btn:hover, .btn.toggle-btn:focus, .btn.toggle-btn:active {
+  color: var(--theme-text-secondary)
+}
+.btn.toggle-btn:hover:before, .btn.toggle-btn:focus:before, .btn.toggle-btn:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
 }
 .btn.toggle-btn[aria-pressed="true"] {
-  text-decoration: underline;
-  border-color: #4d4d4d;
-}
-.btn__danger {
-  color: #ffffff;
-  background-color: #ca3c3c;
-  border-color: #bd2130;
-}
-.btn__filter {
-  border-color: lightgrey;
+  color: var(--theme-text-secondary);
+  background-color: var(--button-color-secondary);
 }
 .btn__primary {
-  color: #ffffff;
-  background-color: #000000;
+  color: var(--theme-text-secondary);
+  background-color: var(--button-color);
+  border-color: var(--button-border);
+  -webkit-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.btn__primary:hover, .btn__primary:active {
+  background: none;
+  color: var(--theme-text);
 }
 .btn-group {
   display: flex;
   justify-content: space-between;
+}
+.btn__ctrl {
+  -webkit-transition-property: var(--theme-text-secondary), var(--button-color-secondary);
+  transition-property: var(--theme-text-secondary), var(--button-color-secondary);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.btn__ctrl:hover, .btn__ctrl:active {
+  background-color: var(--button-color-secondary);
+  color: var(--theme-text-secondary)
+}
+.btn__danger {
+  -webkit-transition-property: var(--theme-text-secondary), var(--button-color-secondary);
+  transition-property: var(--theme-text-secondary), var(--button-color-secondary);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.btn__danger:hover, .btn__danger:active {
+  border-color: #bd2130;
+  background-color: var(--button-color-secondary);
+  color: #bd2130;
 }
 .btn-group > * {
   flex: 1 1 49%;
@@ -146,11 +218,11 @@ body {
 }
 /* END GLOBAL STYLES */
 .todoapp {
-  background: #ffffff;
+  background: #f2eee6;
   margin: 2rem 0 4rem 0;
   padding: 1rem;
   position: relative;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 550px) {
   .todoapp{
