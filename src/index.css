@@ -80,12 +80,15 @@ body {
 }
 /* END RESETS */
 /* GLOBAL STYLES */
+.form-group {
+  display: inline;
+}
 .form-group > input[type="text"] {
-  display: inline-block;
+  display: inline;
   margin-top: 0.4rem;
 }
 .btn {
-  display: inline-block;
+  display: flex;
   vertical-align: middle;
   position: relative;
   overflow: hidden;
@@ -138,6 +141,8 @@ body {
   background-color: var(--button-color-secondary);
 }
 .btn__primary {
+  width: 45px;
+  height: 45px;
   color: var(--theme-text-secondary);
   background-color: var(--button-color);
   border-color: var(--button-border);
@@ -150,11 +155,16 @@ body {
   background: none;
   color: var(--theme-text);
 }
-.btn-group {
+.btn-filter {
   display: flex;
   justify-content: space-between;
 }
+.btn-group {
+  align-self: end;
+}
 .btn__ctrl {
+  width: 45px;
+  height: 45px;
   -webkit-transition-property: var(--theme-text-secondary), var(--button-color-secondary);
   transition-property: var(--theme-text-secondary), var(--button-color-secondary);
   -webkit-transition-duration: 0.3s;
@@ -165,6 +175,8 @@ body {
   color: var(--theme-text-secondary)
 }
 .btn__danger {
+  width: 45px;
+  height: 45px;
   -webkit-transition-property: var(--theme-text-secondary), var(--button-color-secondary);
   transition-property: var(--theme-text-secondary), var(--button-color-secondary);
   -webkit-transition-duration: 0.3s;
@@ -174,12 +186,6 @@ body {
   border-color: #bd2130;
   background-color: var(--button-color-secondary);
   color: #bd2130;
-}
-.btn-group > * {
-  flex: 1 1 49%;
-}
-.btn-group > * + * {
-  margin-left: 0.8rem;
 }
 .label-wrapper {
   margin: 0;
@@ -259,6 +265,16 @@ body {
   border-color: #4d4d4d;
   box-shadow: inset 0 0 0 2px;
 }
+.btn-filter > * {
+  flex: 1 1 49%;
+}
+.btn-filter > * + * {
+  margin-left: 0.8rem;
+}
+
+.btn-group > * + * {
+  margin-left: 0.8rem;
+}
 [class*="__lg"] {
   display: inline-block;
   width: 100%;
@@ -279,17 +295,20 @@ body {
 /* TODO ITEM STYLES */
 .todo {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 .todo > * {
   flex: 0 0 100%;
 }
+.todo-label {
+  display: block;
+}
 .todo-text {
-  width: 100%;
+  width: 75%;
   min-height: 4.4rem;
   padding: 0.4rem 0.8rem;
   border: 2px solid #565656;
+  margin-right: 2.4rem;
 }
 .todo-text:focus {
   box-shadow: inset 0 0 0 2px;
@@ -302,7 +321,8 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.25;
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: relative;
   min-height: 44px;
   padding-left: 40px;
@@ -311,10 +331,10 @@ body {
 .c-cb > label::before,
 .c-cb > input[type="checkbox"] {
   box-sizing: border-box;
-  top: -2px;
-  left: -2px;
-  width: 44px;
-  height: 44px;
+  top: 7px;
+  left: 7px;
+  width: 22.5px;
+  height: 22.5px;
 }
 .c-cb > input[type="checkbox"] {
   -webkit-font-smoothing: antialiased;
@@ -328,7 +348,7 @@ body {
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
-  display: inline-block;
+  display: inline;
   margin-bottom: 0;
   padding: 8px 15px 5px;
   cursor: pointer;
@@ -348,7 +368,7 @@ body {
   box-sizing: content-box;
   content: "";
   position: absolute;
-  top: 11px;
+  top: 7px;
   left: 9px;
   width: 18px;
   height: 7px;
