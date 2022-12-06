@@ -59,7 +59,7 @@ export default function Todo(props) {
     );
     const viewTemplate = (
         <div className="todo stack-small">
-          <div className="c-cb">
+          <span className="c-cb">
             <input 
               id={props.id} 
               type="checkbox" 
@@ -69,7 +69,8 @@ export default function Todo(props) {
             <label className="todo-label" htmlFor={props.id}>
               {props.name}
             </label>
-            <span className="btn-group">
+          </span>
+          <span className="btn-group">
               <button 
                 type="button" 
                 className="btn btn__ctrl todo-edit"
@@ -88,8 +89,6 @@ export default function Todo(props) {
                 <span className="visually-hidden">{props.name}</span>
               </button>
             </span>
-          </div>
-          
         </div>
     );
 
