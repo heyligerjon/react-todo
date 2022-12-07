@@ -85,7 +85,6 @@ body {
 }
 .form-group > input[type="text"] {
   display: flex;
-  margin-top: 0.4rem;
 }
 .btn {
   display: flex;
@@ -168,6 +167,7 @@ body {
   align-items: flex-start;
   justify-content: end;
   margin-top: 0;
+  width: 25%;
 }
 .btn__ctrl {
   width: 45px;
@@ -312,6 +312,9 @@ body {
 .todo > * {
   flex: 0 1 100%;
 }
+.todo > * + * {
+  flex: 0 1 100%;
+}
 .todo-label {
   box-sizing: border-box;
   display: flex;
@@ -336,6 +339,7 @@ body {
   line-height: 1.25;
   display: flex;
   position: relative;
+  align-items: center;
   min-height: 44px;
   padding-left: 40px;
   width: 50%;
@@ -343,10 +347,10 @@ body {
 .c-cb > label::before,
 .c-cb > input[type="checkbox"] {
   box-sizing: border-box;
-  top: 7px;
+  top: 10px;
   left: 7px;
-  width: 22.5px;
-  height: 22.5px;
+  width: 27.5px;
+  height: 27.5px;
 }
 .c-cb > input[type="checkbox"] {
   -webkit-font-smoothing: antialiased;
@@ -367,7 +371,6 @@ body {
   cursor: pointer;
   touch-action: manipulation;
   float: left;
-
 }
 .c-cb > label::before {
   content: ""; 
@@ -383,10 +386,10 @@ body {
   box-sizing: content-box;
   content: "";
   position: absolute;
-  top: 7px;
-  left: 9px;
-  width: 18px;
-  height: 7px;
+  top: 16px;
+  left: 10px;
+  width: 15px;
+  height: 5px;
   transform: rotate(-45deg);
   border: solid;
   border-width: 0 0 5px 5px;

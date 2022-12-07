@@ -29,9 +29,6 @@ export default function Todo(props) {
     const editingTemplate = (
         <form className="stack-small" onSubmit={handleSubmit}>
             <div className="form-group">
-                <label className="todo-label" htmlFor={props.id}>
-                    New name for {props.name}
-                </label>
                 <input 
                   id={props.id} 
                   className="todo-text" 
@@ -46,11 +43,11 @@ export default function Todo(props) {
                     className="btn btn__ctrl todo-cancel"
                     onClick={() => setEditing(false)}
                   >
-                      Cancel
+                      <span class="material-icons-round">clear</span>
                       <span className="visually-hidden">renaming {props.span}</span>
                   </button>
                   <button type="submit" className="btn btn__primary todo-save">
-                      Save
+                    <span class="material-icons-round">done</span>
                       <span className="visually-hidden">new name for {props.name}</span>
                   </button>
                 </span>
@@ -58,7 +55,7 @@ export default function Todo(props) {
         </form>
     );
     const viewTemplate = (
-        <div className="todo stack-small">
+        <div className="todo stack-small">          
           <span className="c-cb">
             <input 
               id={props.id} 
@@ -77,15 +74,15 @@ export default function Todo(props) {
                 onClick={() => setEditing(true)}
                 ref={editButtonRef}
               >
-                Edit
-                <span className="visually-hidden">{props.name}</span>
+                <span class="material-icons-round">edit</span>
+                <span className="visually-hidden">{props.name}</span> 
               </button>
               <button 
                 type="button" 
                 className="btn btn__danger" 
                 onClick={() => props.deleteTask(props.id)}
               >
-                Delete
+                <span class="material-icons-round">delete</span>
                 <span className="visually-hidden">{props.name}</span>
               </button>
             </span>
@@ -102,6 +99,9 @@ export default function Todo(props) {
     }, [wasEditing, isEditing]);
     
     return (
-        <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>
+      
+        <li className="todo">
+          {isEditing ? editingTemplate : viewTemplate}
+        </li>
     );
 }

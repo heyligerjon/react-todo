@@ -89,7 +89,9 @@ function App(props) {
 
   return (
     <div className="todoapp stack-large">
-      <h1>TodoMatic</h1>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+            rel="stylesheet"></link>
+      <h1>Things To Do</h1>
       <Form addTask={addTask} />
       <div className="filters btn-filter stack-exception">
         {filterList}
