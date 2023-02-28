@@ -13,7 +13,7 @@ function Form(props) {
         setName("");
     }
     return (
-        <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           id="new-todo-input"

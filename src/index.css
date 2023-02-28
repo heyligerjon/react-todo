@@ -87,7 +87,7 @@ body {
   display: flex;
 }
 .btn {
-  display: flex;
+  display: flex; 
   vertical-align: middle;
   position: relative;
   overflow: hidden;
@@ -165,7 +165,7 @@ body {
   display: flex;
   min-width: 0;
   align-items: flex-start;
-  justify-content: end;
+  justify-content: flex-end;
   margin-top: 0;
   width: 25%;
 }

@@ -43,11 +43,11 @@ export default function Todo(props) {
                     className="btn btn__ctrl todo-cancel"
                     onClick={() => setEditing(false)}
                   >
-                      <span class="material-icons-round">clear</span>
+                      <span className="material-icons-round">clear</span>
                       <span className="visually-hidden">renaming {props.span}</span>
                   </button>
                   <button type="submit" className="btn btn__primary todo-save">
-                    <span class="material-icons-round">done</span>
+                    <span className="material-icons-round">done</span>
                       <span className="visually-hidden">new name for {props.name}</span>
                   </button>
                 </span>
@@ -74,7 +74,7 @@ export default function Todo(props) {
                 onClick={() => setEditing(true)}
                 ref={editButtonRef}
               >
-                <span class="material-icons-round">edit</span>
+                <span className="material-icons-round">edit</span>
                 <span className="visually-hidden">{props.name}</span> 
               </button>
               <button 
@@ -82,7 +82,7 @@ export default function Todo(props) {
                 className="btn btn__danger" 
                 onClick={() => props.deleteTask(props.id)}
               >
-                <span class="material-icons-round">delete</span>
+                <span className="material-icons-round">delete</span>
                 <span className="visually-hidden">{props.name}</span>
               </button>
             </span>
